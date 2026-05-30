@@ -10,23 +10,24 @@
     --textcolor: #f0f0f0;
 }
 
+.naranja {
+    color: #ff6b2b;
+}
+
+.plomo
+{
+  color:#524e4e
+}
+
 body{
-    font-family: "DM Sans", sans-serif;
+    font-family: "Inter", sans-serif;
     line-height: 1.5;
-    background: linear-gradient(
-        135deg,        /* dirección diagonal, como CenteIA */
-        #0a0a0a 0%,    /* negro puro al inicio (0%) */
-        #1a0a00 50%,   /* café muy oscuro a la mitad (50%) */
-        #0a0a0a 100%   /* vuelve a negro al final (100%) */
-    );
-    background-attachment: fixed; /* el degradado no se mueve al hacer scroll, queda fijo */
+    
+    background-color: var(--bgcolor);
     color: var(--textcolor);
 }
 
-body.dark-mode{
-    --bgcolor: #ffffff;
-    --textcolor: #0a0a0a;
-}
+
 
 nav {
   display: flex;
@@ -59,19 +60,145 @@ nav a {
 /* justify-content → mover elementos a izquierda, centro o derecha
 align-items → mover elementos arriba, centro o abajo*/
 
+.badge {
+    display: inline-block;
+    background: transparent;
+    border: 1px solid rgba(255, 107, 43, 0.5);
+    color: #ff6b2b;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 8px 16px;
+    border-radius: 30px;
+    margin-bottom: 1px; /*abajo */
+    
+}
 #hero {
   display: flex;
   flex-direction:column;     /* base: apilado en móvil, decide hacia dónde van. El justify-content decide dónde dentro de esa dirección.  */
-  align-items: center;
-  gap: 32px;
+  gap: 40px;
   padding: 32px;
-  text-align: center;
+  align-items: flex-start;
+
 }
 
-#hero img {
-  max-width: 100%; /*Puedes medir lo que tú quieras (tu tamaño nativo), PERO tu tope máximo permitido es el 100% de tu padre*/
-  height: auto;
+#hero p {
+    text-align: justify left;
 }
+
+.botones {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.btn-principal {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);;
+    padding: 14px 26px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-secundario {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 14px 26px;
+    font-size: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.prueba-social {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.avatares {
+    display: flex;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid #0a0a0f;
+    margin-left: -8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.avatar:first-child {
+    margin-left: 0;
+}
+
+.prueba-texto p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    margin: 0;
+}
+
+.prueba-texto b {
+    color: #fff;
+    font-weight: 600;
+}
+
+.estrellas {
+    color: #ffb800 !important;
+    font-size: 11px;
+    margin-top: 3px !important;
+}
+
+
+.tarjetas-stats {
+    display: flex;        /* pone las 2 tarjetas lado a lado */
+    gap: 18px;            /* espacio entre las 2 tarjetas */
+    margin-top: 5px;     /* espacio arriba, separa de la prueba social */
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);  /* fondo oscuro translúcido */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* borde sutil */
+    border-radius: 10px;   /* esquinas redondeadas */
+    padding: 12px 16px;    /* espacio interno */
+    display: flex;         /* flex para apilar número y texto */
+    flex-direction: column; /* número arriba, texto abajo */
+    gap: 4px;              /* espacio entre número y texto */
+    animation: flotar 4s ease-in-out infinite; /* animación de subir/bajar */
+}
+
+.stat-card b {
+    font-size: 18px;       /* número grande */
+    font-weight: 700;      /* negrita */
+    color: #ff6b2b;        /* naranja */
+}
+
+.stat-card span {
+    font-size: 11px;       /* texto pequeño */
+    color: rgba(255,255,255,0.6); /* blanco semitransparente */
+}
+
+
+/*ESTa animacion  FLOTANTe FUE HECHOS CON IA*/
+
+/* animación de flotar */
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }     /* posición normal */
+    50%       { transform: translateY(-10px); } /* sube 10px */
+}
+
+
+
 
 footer {
   display: flex;
@@ -87,42 +214,140 @@ footer a {
   align-items: center;
 }
 
-#contacto {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 32px;
+
+
+
+.botoncontacto {
+    display: inline-block;
+    background: transparent;
+    border: 1px solid rgba(255, 107, 43, 0.5);
+    color: #ff6b2b;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 8px 16px;
+    border-radius: 30px;
+    margin-bottom: 1px; /*abajo */
+    align-items:flex-start
+    
 }
 
+#contacto {
+   background: #0a0a0f;        /* fondo oscuro */
+    padding: 60px 32px;          /* espacio interno */
+}
+
+#item-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.contact-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 107, 43, 0.15);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.contact-text b {
+    display: block;        /* título en su propia línea */
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.contact-text span {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 13px;
+}
+
+
+
+
 #contacto form {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);      /* ← tarjeta oscura */
+    border: 1px solid rgba(255, 255, 255, 0.08); /* ← borde sutil */
+    border-radius: 18px;                          /* ← esquinas redondeadas */
+    padding: 32px;                                /* ← espacio interno */
+    margin-top: 32px;
 }
 
 #contacto label {
-  font-weight: 600;
+    font-weight: 600;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;                    /* ← MAYÚSCULAS automático */
+    margin-top: 8px;
 }
 
-#contacto input {
-  padding: 8px;
-  border: 1px solid #ff6b2b;
-  border-radius: 4px;
-  font: inherit;  /*hereda el tipo de letra dms sans*/
-  background-color: #1a1a1a;
-  color: var(--textcolor);
+#contacto input,
+#contacto select,                                 /* ← agrega select */
+#contacto textarea {                              /* ← agrega textarea */
+    padding: 12px 14px;                           /* ← más padding */
+    border: 1px solid rgba(255, 255, 255, 0.08); /* ← borde sutil gris */
+    border-radius: 10px;                          /* ← más redondeado */
+    font: inherit;
+    background-color: rgba(255, 255, 255, 0.06); /* ← fondo oscuro sutil */
+    color: #fff;
+    outline: none;
+    transition: border 0.2s;                      /* ← animación al focus */
+    width: 100%;
+}
+
+#contacto input:focus,
+#contacto select:focus,
+#contacto textarea:focus {
+    border-color: #ff6b2b;                        /* ← naranja al escribir */
+}
+
+#contacto input::placeholder,
+#contacto textarea::placeholder {
+    color: rgba(255, 255, 255, 0.3);              /* ← placeholder gris */
+}
+
+#contacto textarea {
+    resize: vertical;
+    min-height: 120px;
 }
 
 #contacto button {
-  margin-top: 16px;
-  padding: 12px;
-  background: #ff6b2b;
-  color: #0a0a0a;
-  border: none;   /* quita el borde por defecto del navegador */
-  border-radius: 4px;     /* redondea las esquinas */
-  font-weight: 600;
-  cursor: pointer;
+    margin-top: 16px;
+    padding: 14px;
+    background: transparent;                      /* ← transparente */
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);  /* ← borde blanco sutil */
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#contacto button:hover {
+    background: rgba(255, 255, 255, 0.05);        /* ← efecto hover */
+    border-color: #fff;
 }
 
 .logo {
@@ -131,143 +356,318 @@ footer a {
   margin-right: auto;
 }
 
+
+
+
+
+
+/* SECCION QUE APRENDERAS*/
 #caracteristicas {
-  padding: 32px;
+    padding: 80px 32px;        /* espacio interno: 80px arriba/abajo, 32px lados */
+    text-align: center;         /* centra el contenido (título y subtítulo) */
+    flex-direction: column;
 }
 
-.cards {
-  display: flex;        /* pone las cards en fila horizontal */
-  flex-wrap: wrap;      /* si no caben en una línea, bajan a la siguiente */
-  gap: 16px;            /* espacio entre cada card */
-  margin-top: 16px;     /* espacio entre el h2 y las cards */
+/* === BADGE "QUÉ APRENDERÁS" === */
+#caracteristicas .tag {
+    display: inline-block;      /* para que no ocupe todo el ancho */
+    background: rgba(255, 107, 43, 0.1);  /* fondo naranja translúcido */
+    border: 1px solid rgba(255, 107, 43, 0.3); /* borde naranja sutil */
+    color: #ff6b2b;             /* texto naranja */
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;        /* letras separadas */
+    padding: 6px 14px;
+    border-radius: 30px;        /* forma de píldora */
+    margin-bottom: 16px;
+}
+
+/* === TÍTULO H2 === */
+#caracteristicas h2 {
+    font-size: 34px;
+    font-weight: 800;           /* extra negrita */
+    color: #fff;
+    line-height: 1.15;          /* líneas pegadas */
+    letter-spacing: -1px;       /* letras un toque juntas */
+    margin-bottom: 12px;
+}
+
+/* === SUBTÍTULO === */
+#caracteristicas .subtitulo {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);  /* blanco semitransparente */
+    max-width: 520px;            /* no se hace muy ancho */
+    margin: 0 auto 48px auto;    /* centrado horizontalmente + espacio abajo */
+    line-height: 1.6;
+}
+
+/* === GRID DE CARDS === */
+#caracteristicas .cards {
+    display: grid;
+  
+    gap: 20px;                    /* espacio entre cards */
+    max-width: 1100px;            /* ancho máximo */
+    margin: 0 auto;               /* centrado horizontalmente */
+}
+
+/* === CADA CARD === */
+#caracteristicas .card {
+    background: rgba(255, 255, 255, 0.03);  /* fondo casi negro translúcido */
+    border: 1px solid rgba(255, 255, 255, 0.08); /* borde sutil */
+    border-radius: 16px;
+    padding: 28px;
+    text-align: left;             /* texto a la izquierda dentro de la card */
+    position: relative;           /* para posicionar el número 01, 02, 03 */
+    transition: all 0.3s;         /* animación suave al hacer hover */
+    cursor: pointer;
+}
+
+/* === HOVER DE CARD === */
+#caracteristicas .card:hover {
+    border-color: rgba(255, 107, 43, 0.5);  /* borde naranja al pasar mouse */
+    transform: translateY(-4px);             /* se eleva 4px */
+    box-shadow: 0 20px 40px rgba(255, 107, 43, 0.1); /* sombra naranja */
+}
+
+/* === NÚMERO 01, 02, 03 === */
+#caracteristicas .num {
+    position: absolute;          /* posición flotante dentro de la card */
+    top: 24px;
+    right: 24px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+#caracteristicas .icon-box {
+    color: #ff6b2b;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* === TÍTULO H3 DENTRO DE CARD === */
+#caracteristicas .card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* === PÁRRAFO DENTRO DE CARD === */
+#caracteristicas .card p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+/* === LINK "EXPLORAR MÓDULOS →" === */
+#caracteristicas .link-card {
+    font-size: 11px;
+    color: #ff6b2b;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-decoration: none;        /* quita el subrayado */
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.3s;         /* anima el espacio al hover */
+}
+
+/* === HOVER DEL LINK === */
+#caracteristicas .card:hover .link-card {
+    gap: 12px;                    /* la flecha se separa al pasar mouse */
 }
 
 
 
-.card {
-  flex-basis: 280px;    /* tamaño base de cada card antes de crecer, como width */
-  flex-grow: 1;         /* si sobra espacio, las 3 cards se lo reparten por igual. Si una tuviera flex-grow:2 comería el doble del espacio sobrante */
-  padding: 16px;        /* espacio interno entre el borde y el contenido */
-  border: 1px solid #ff6b2b;  /* borde gris claro de 1px sólido */
-  border-radius: 8px;   /* esquinas redondeadas */
-  background-color: #1a1a1a;  /* igual que en .plan */
-}
 
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 14px;
-}
 
-#galeria {
-  padding: 32px;
-}
 
-.galeria {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 16px;
-}
 
-.galeria img {
-  max-width: 100%;
-  flex-grow: 1;
-  height: auto;
-  border-radius: 4px;
-}
-
-#preguntasfrecuentes {
-  padding: 32px;
-}
-
-#preguntasfrecuentes h2 {
-  margin-bottom: 24px;
-}
-
-#preguntasfrecuentes h3 {
-  padding: 16px 0;
-  border-top: 1px solid #ff6b2b; /* línea separadora arriba de cada pregunta */
-  font-size: 16px;
-}
-
-#preguntasfrecuentes p {
-  padding-bottom: 16px;
-  color: #cccccc; /* texto de respuesta un poco más suave */
-}
-
-#galeria {
-  padding: 32px;
-}
-
-#galeria h2 {
-  margin-bottom: 24px;
-}
-
-.galeria {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.galeria img {
-  width: 100%;        /* móvil: 1 imagen por fila */
-  border-radius: 8px;
-}
 
 
 /* ========================= PRECIOS.HTML ========================= */
-.planes {
-  display: grid;
-  gap: 24px;
-  padding: 32px;
-  margin: 0 auto;
-}
 
-.plan {
-  border: 1px solid #ff6b2b;
-  border-radius: 8px;
-  padding: 24px;
-  background-color: #1a1a1a;
-  height: 300px;
+.precios-page {
+  background: #05060b;
+  color: #fff;
+  padding: 48px 20px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.plan .precio {
-  font-size: 32px;
-  font-weight: 700;
-  margin: 16px 0;
-  color: #ff6b2b;
 }
 
 #content-precios {
   text-align: center;
+  max-width: 900px;
+  margin: 0 auto 48px;
+}
+
+.tag-precios {
+  display: inline-block;
+  color: #ff6b2b;
+  border: 1px solid #ff6b2b;
+  border-radius: 999px;
+  padding: 8px 22px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+#content-precios h1 {
+  font-size: 46px;
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+
+#content-precios h1 span,
+#content-precios p span {
+  color: #ff6b2b;
+}
+
+#content-precios p {
+  color: #b8b8c4;
+  font-size: 18px;
+  margin-bottom: 36px;
+}
+
+.toggle-precios {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid #3a3a45;
+  border-radius: 999px;
+  padding: 4px;
+}
+
+.toggle-precios button {
+  background: transparent;
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.toggle-precios button:first-child {
+  border-color: #3a3a45;
+}
+
+.planes {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 22px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.plan {
+  position: relative;
+  background: #111218;
+  border: 1px solid #292a33;
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.plan-popular {
+  border-color: #ff6b2b;
+  background: linear-gradient(180deg, #21100e, #111218);
+}
+
+.popular {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff6b2b;
+  color: #fff;
+  border-radius: 999px;
+  padding: 6px 18px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.plan h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.descripcion,
+.factura {
+  color: #a7a7b3;
+  margin: 0;
+}
+
+.precio {
+  margin: 40px 0 8px;
+}
+
+.precio strong {
+  font-size: 52px;
+  line-height: 1;
+}
+
+.precio span {
+  color: #b8b8c4;
+}
+
+.btn {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid #555661;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 28px 0;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 .plan ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.plan li {
+  margin-bottom: 16px;
+  color: #d8d8df;
+}
+
+.plan li::before {
+  margin-right: 12px;
+  font-weight: 700;
+}
+
+.plan li.si::before {
+  content: "✓";
+  color: #19d99b;
+}
+
+.plan li.no {
+  color: #666773;
+}
+
+.plan li.no::before {
+  content: "×";
+  color: #666773;
+}
+
+.garantia {
   text-align: center;
+  color: #b8b8c4;
+  margin-top: 42px;
 }
 
-.plan a {
-  color: #0a0a0a;
-  text-decoration: none;
-  background: #ff6b2b;
-  border: #ff6b2b 1px solid;
-  border-radius: 5px;
-  padding: 4px 12px;
-}
-
-.clientes {
-  padding: 32px;
-  margin: 0 auto;
-}
 
 .logos {
   display: grid;
@@ -291,60 +691,129 @@ footer a {
 
 /* ========================= FAQ.HTML ========================= */
 
-/* BASE: móvil — todo apilado en 1 columna */
-.faq-layout {
-  display: grid;
-  grid-template-areas:
-    "header"
-    "nav"
-    "main"
-    "footer";
-  grid-template-columns: 1fr;
-  gap: 16px;
-  min-height: 100vh;
-}
-
-.faq-layout header {
-  grid-area: header;
-}
-
-.faq-nav {
-  grid-area: nav;
-  padding: 16px;
-  margin: 0px 16px;
-  background: #1a1a1a;
-  border-radius: 8px;
-  border: 1px solid #ff6b2b;
-}
-
 .faq-main {
-  grid-area: main;
-  padding: 16px;
+  background: #05060b;
+  color: #fff;
+  min-height: 100vh;
+  padding: 56px 20px;
+
 }
 
-.faq-layout footer {
-  grid-area: footer;
+.faq-main h1 {
+  text-align: center;
+  font-size: 42px;
+  line-height: 1.05;
+  margin: 0 0 52px;
+  font-weight: 600;
 }
 
-.faq-nav ul {
-  list-style: none;
-  padding: 0;
+.faq-main h1 span {
+  color: #ff6b2b;
+}
+
+.faq-section {
+  max-width: 760px;
+  margin: 0 auto 42px;
+}
+
+.faq-section h2 {
+  color: #ff6b2b;
+  font-size: 28px;
+  margin: 0 0 18px;
+  font-weight: 600;
 }
 
 .faq-main details {
-  border-bottom: 1px solid #ff6b2b;
-  padding: 16px 0;
+  position: relative;
+  background: linear-gradient(180deg, #14151b, #0e0f14);
+  border: 1px solid #2a2b33;
+  border-radius: 18px;
+  padding: 24px 56px 24px 22px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+}
+
+.faq-main details:hover {
+  border-color: rgba(255, 107, 43, 0.65);
+  transform: translateY(-2px);
+}
+
+.faq-main details[open] {
+  border-color: #ff6b2b;
+  background: linear-gradient(180deg, #1a1110, #101116);
 }
 
 .faq-main summary {
-  font-weight: 600;
+  list-style: none;
   cursor: pointer;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.35;
 }
 
-.faq-layout h1 {
-   padding: 16px;
-   text-align: center;
+.faq-main summary::-webkit-details-marker {
+  display: none;
 }
+
+.faq-main summary::after {
+  content: "+";
+  position: absolute;
+  right: 22px;
+  top: 22px;
+  color: #ff6b2b;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.faq-main details[open] summary::after {
+  content: "−";
+}
+
+.faq-main p {
+  color: #a7a7b3;
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 18px 0 0;
+  max-width: 95%;
+}
+
+/* Numeración moderna */
+.faq-section details::before {
+  position: absolute;
+  top: 24px;
+  right: 58px;
+  color: rgba(255, 255, 255, 0.22);
+  font-size: 17px;
+  font-weight: 400;
+}
+
+#general details:nth-of-type(1)::before {
+  content: "01";
+}
+
+#general details:nth-of-type(2)::before {
+  content: "02";
+}
+
+#precios details:nth-of-type(1)::before {
+  content: "03";
+}
+
+#precios details:nth-of-type(2)::before {
+  content: "04";
+}
+
+#soporte details:nth-of-type(1)::before {
+  content: "05";
+}
+
+#soporte details:nth-of-type(2)::before {
+  content: "06";
+}
+
+
 
 
 /* ===== TABLET (640px en adelante) ===== */

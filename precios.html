@@ -9,13 +9,11 @@
 </head>
 <body>
     <header>
-        <button id="dark-mode-btn">🌙 Modo Oscuro</button>
+ 
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="index.html#caracteristicas">Características</a></li>
-                <li><a href="index.html#galeria">Galería</a></li>
-                <li><a href="index.html#contacto">Contacto</a></li>
             </ul>
             <a href="precios.html">Precios</a>
             <a href="faq.html" id="icono-faq" aria-label="Preguntas frecuentes">
@@ -25,62 +23,113 @@
     </header>
 
     <main>
-        <div id="content-precios">
-            <h1>Planes y <span style="color: #ff6b2b;">precios</span></h1>
-            <p>Elige el plan que mejor se ajuste a tu <span style="color: #ff6b2b;">aprendizaje.</span></p>
-        </div>
-        <div class="planes">
-            <article class="plan">
-                <h2><span style="color: #ff6b2b;">Free</span></h2>
-                <p class="precio">$0</p>
-                <ul>
-                    <li>Introducción a la IA</li>
-                    <li>2 lecciones gratuitas</li>
-                </ul>
-                <a href="#" class="btn">Empezar gratis</a>
-            </article>
-            <article class="plan">
-                <h2><span style="color: #ff6b2b;">Starter</span></h2>
-                <p class="precio">$9/mes</p>
-                <ul>
-                    <li>Todo lo del Free</li>
-                    <li>Acceso completo al curso</li>
-                </ul>
-                <a href="#" class="btn">Probar Starter</a>
-            </article>
-            <article class="plan">
-                <h2><span style="color: #ff6b2b;">Pro</span></h2>
-                <p class="precio">$19/mes</p>
-                <ul>
-                    <li>Todo lo del Starter</li>
-                    <li>Sesiones en vivo</li>
-                    <li>Certificado digital</li>
-                </ul>
-                <a href="#" class="btn">Probar 14 días</a>
-            </article>
-            <article class="plan">
-                <h2><span style="color: #ff6b2b;">Enterprise</span></h2>
-                <p class="precio">$99/mes</p>
-                <ul>
-                    <li>Todo lo del Pro</li>
-                    <li>Licencias para equipo</li>
-                    <li>Soporte dedicado</li>
-                </ul>
-                <a href="#" class="btn">Contactar ventas</a>
-            </article>
-        </div>
+       <main class="precios-page">
+    <section id="content-precios">
+        <span class="tag-precios">PRECIOS</span>
 
-        <section class="clientes">
-            <h2>Marcas que <span style="color: #ff6b2b;">confían</span> en nosotros</h2>
-            <div class="logos">
-                <div class="logo-cliente">ACME</div>
-                <div class="logo-cliente">TechCo</div>
-                <div class="logo-cliente">StartupX</div>
-                <div class="logo-cliente">BigCorp</div>
-                <div class="logo-cliente">GlobalInc</div>
-                <div class="logo-cliente">FutureLab</div>
+        <h1>Invierte en <span>tu futuro</span> con IA.</h1>
+
+        <p>
+            Elige el plan que mejor se ajuste a tu nivel.
+            Cancela cuando quieras, sin contratos.
+        </p>
+
+        <div class="toggle-precios">
+            <button>Mensual</button>
+            <button>Anual - Ahorra 20%</button>
+        </div>
+    </section>
+
+    <section class="planes">
+        <article class="plan">
+            <h2>Free</h2>
+            <p class="descripcion">Prueba gratis sin tarjeta</p>
+
+            <div class="precio">
+                <strong>$0</strong>
+                <span>/mes</span>
             </div>
-        </section>
+
+            <p class="factura">Para siempre</p>
+
+            <a href="#" class="btn">Empezar gratis</a>
+
+            <ul>
+                <li class="si">Introducción a la IA</li>
+                <li class="si">2 lecciones gratuitas</li>
+                <li class="no">Certificado</li>
+                <li class="no">Sesiones en vivo</li>
+            </ul>
+        </article>
+
+        <article class="plan">
+            <h2>Starter</h2>
+            <p class="descripcion">Para empezar tu camino</p>
+
+            <div class="precio">
+                <strong>$9</strong>
+                <span>/mes</span>
+            </div>
+
+            <p class="factura">Facturado anualmente</p>
+
+            <a href="#" class="btn">Probar Starter</a>
+
+            <ul>
+                <li class="si">Todo lo del Free</li>
+                <li class="si">Acceso al curso completo</li>
+                <li class="si">Ejercicios prácticos</li>
+                <li class="no">Sesiones en vivo</li>
+            </ul>
+        </article>
+
+        <article class="plan plan-popular">
+            <span class="popular">Más popular</span>
+
+            <h2>Pro</h2>
+            <p class="descripcion">El más elegido</p>
+
+            <div class="precio">
+                <strong>$19</strong>
+                <span>/mes</span>
+            </div>
+
+            <p class="factura">Facturado anualmente</p>
+
+            <a href="#" class="btn">Probar 14 días gratis</a>
+
+            <ul>
+                <li class="si">Todo lo del Starter</li>
+                <li class="si">Sesiones en vivo semanales</li>
+                <li class="si">Certificado digital</li>
+                <li class="si">Comunidad privada</li>
+            </ul>
+        </article>
+
+        <article class="plan">
+            <h2>Enterprise</h2>
+            <p class="descripcion">Para equipos y empresas</p>
+
+            <div class="precio">
+                <strong>$99</strong>
+                <span>/mes</span>
+            </div>
+
+            <p class="factura">Por usuario · Min. 5</p>
+
+            <a href="#" class="btn">Contactar ventas</a>
+
+            <ul>
+                <li class="si">Todo lo del Pro</li>
+                <li class="si">Licencias por equipo</li>
+                <li class="si">Soporte dedicado 24/7</li>
+                <li class="si">SLA garantizado</li>
+            </ul>
+        </article>
+    </section>
+
+    <p class="garantia">✓ Garantía de devolución de 30 días, sin preguntas</p>
+</main>
     </main>
 
     <footer>
@@ -100,21 +149,6 @@
             </a>
         </div>
     </footer>
-    <script>
-        // Busca en toda la página el elemento que tenga id="dark-mode-btn" (el botón)
-        // y lo guarda en la variable "btn" para poder usarlo después
-        const btn = document.getElementById('dark-mode-btn');
-
-        // Le dice al botón: "cuando alguien haga clic en ti, ejecuta esta función"
-        btn.addEventListener('click', function() {
-
-            // toggle funciona como un interruptor:
-            // si el body NO tiene la clase "dark-mode" → se la agrega
-            // si el body YA tiene la clase "dark-mode" → se la quita
-            // esa clase en el CSS cambia --bgcolor y --textcolor a colores claros
-            document.body.classList.toggle('dark-mode');
-
-        }); // cierra el clic y el addEventListener
-    </script>
+    
 </body>
 </html>

@@ -9,13 +9,12 @@
 </head>
 <body class="faq-layout">
     <header>
-        <button id="dark-mode-btn">🌙 Modo Oscuro</button>
+       
         <nav>
             <ul>
                 <li><a href="index.html"> Inicio</a></li>
                 <li><a href="index.html#caracteristicas">Características</a></li>
-                <li><a href="index.html#galeria">Galería</a></li>
-                <li><a href="index.html#contacto">Contacto</a></li>
+              
             </ul>
             <a href="precios.html">Precios</a>
             <a href="faq.html" id="icono-faq" aria-label="Preguntas frecuentes">
@@ -24,55 +23,53 @@
         </nav>
     </header>
 
-    <nav class="faq-nav">
-        <h2><span style="color: #ff6b2b;">Categorías</span></h2>
-        <ul>
-            <li><a href="#general">General</a></li>
-            <li><a href="#precios">Precios</a></li>
-            <li><a href="#soporte">Soporte</a></li>
-        </ul>
-    </nav>
+   
 
-    <main class="faq-main">
-        <h1>Preguntas <span style="color: #ff6b2b;">Frecuentes</span></h1>
+ <main class="faq-main">
+    <h1>Preguntas <span>Frecuentes</span></h1>
 
-        <section id="general">
-            <h2><span style="color: #ff6b2b;">General</span></h2>
-            <details>
-                <summary>¿Qué es Synaptech AI?</summary>
-                <p>Synaptech AI es un curso de Inteligencia Artificial diseñado para personas sin experiencia técnica que quieren aprender a usar la IA en su vida y trabajo.</p>
-            </details>
-            <details>
-                <summary>¿Para quién está dirigido?</summary>
-                <p>Para cualquier persona que quiera aprender IA desde cero, sin necesidad de saber programar ni tener conocimientos técnicos previos.</p>
-            </details>
-        </section>
+    <section id="general" class="faq-section">
+        <h2>General</h2>
 
-        <section id="precios">
-            <h2><span style="color: #ff6b2b;">Precios</span></h2>
-            <details>
-                <summary>¿Hay versión gratuita?</summary>
-                <p>Sí, el plan Free incluye una introducción a la IA y 2 lecciones gratuitas para que puedas empezar sin costo.</p>
-            </details>
-            <details>
-                <summary>¿Puedo cambiar de plan después?</summary>
-                <p>Sí, puedes actualizar tu plan en cualquier momento desde tu perfil.</p>
-            </details>
-        </section>
+        <details>
+            <summary>¿Qué es Synaptech AI?</summary>
+            <p>Synaptech AI es un curso de Inteligencia Artificial diseñado para personas sin experiencia técnica que quieren aprender a usar la IA en su vida y trabajo.</p>
+        </details>
 
-        <section id="soporte">
-            <h2><span style="color: #ff6b2b;">Soporte</span></h2>
-            <details>
-                <summary>¿Cómo contacto soporte?</summary>
-                <p>Puedes escribirnos a través del formulario de contacto en nuestra página principal o directamente a nuestro correo.</p>
-            </details>
-            <details>
-                <summary>¿Recibo certificado al terminar?</summary>
-                <p>Sí, al completar el curso recibes un certificado digital que puedes compartir en LinkedIn y redes profesionales.</p>
-            </details>
-        </section>
-    </main>
+        <details>
+            <summary>¿Para quién está dirigido?</summary>
+            <p>Para cualquier persona que quiera aprender IA desde cero, sin necesidad de saber programar ni tener conocimientos técnicos previos.</p>
+        </details>
+    </section>
 
+    <section id="precios" class="faq-section">
+        <h2>Precios</h2>
+
+        <details>
+            <summary>¿Hay versión gratuita?</summary>
+            <p>Sí, el plan Free incluye una introducción a la IA y 2 lecciones gratuitas para que puedas empezar sin costo.</p>
+        </details>
+
+        <details>
+            <summary>¿Puedo cambiar de plan después?</summary>
+            <p>Sí, puedes actualizar tu plan en cualquier momento desde tu perfil.</p>
+        </details>
+    </section>
+
+    <section id="soporte" class="faq-section">
+        <h2>Soporte</h2>
+
+        <details>
+            <summary>¿Cómo contacto soporte?</summary>
+            <p>Puedes escribirnos a través del formulario de contacto en nuestra página principal o directamente a nuestro correo.</p>
+        </details>
+
+        <details>
+            <summary>¿Recibo certificado al terminar?</summary>
+            <p>Sí, al completar el curso recibes un certificado digital que puedes compartir en LinkedIn y redes profesionales.</p>
+        </details>
+    </section>
+</main>
     <footer>
         <p>Contacto: nicolezutaprada@gmail.com</p>
         <div id="redessociales">
@@ -90,21 +87,6 @@
             </a>
         </div>
     </footer>
-    <script>
-        // Busca en toda la página el elemento que tenga id="dark-mode-btn" (el botón)
-        // y lo guarda en la variable "btn" para poder usarlo después
-        const btn = document.getElementById('dark-mode-btn');
-
-        // Le dice al botón: "cuando alguien haga clic en ti, ejecuta esta función"
-        btn.addEventListener('click', function() {
-
-            // toggle funciona como un interruptor:
-            // si el body NO tiene la clase "dark-mode" → se la agrega
-            // si el body YA tiene la clase "dark-mode" → se la quita
-            // esa clase en el CSS cambia --bgcolor y --textcolor a colores oscuros
-            document.body.classList.toggle('dark-mode');
-
-        }); // cierra el clic y el addEventListener
-    </script>
+  
 </body>
 </html>
