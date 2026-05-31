@@ -148,12 +148,15 @@
 </div>
 
 
+
+
             <form>
                 <label for="nombre">Nombre (mín. 3 caracteres)</label>
                 <input type="text" id="nombre" name="nombre" 
-                required
-                 minlength="3"
-                  pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+">>
+       required
+       minlength="3"
+       maxlength="50"
+       pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+">
                 <label for="email">Correo Electrónico</label>
                 <input type="email" id="email" name="email" required>
 
