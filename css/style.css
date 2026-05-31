@@ -550,12 +550,11 @@ footer a {
   margin-bottom: 36px;
 }
 
+
+
 .toggle-precios {
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr;
-  border: 1px solid #3a3a45;
-  border-radius: 999px;
-  padding: 4px;
+  display: flex;
+  justify-content: center;
 }
 
 .toggle-precios button {
@@ -1010,6 +1009,8 @@ footer a {
   }
   .hero-left {
     padding: 32px 24px;
+    position: relative;
+    z-index: 5;
   }
   .hero-h1 {
     font-size: 42px;
@@ -1024,20 +1025,11 @@ footer a {
     z-index: 1;
     opacity: 0.75;
   }
-  .hero-left {
-    position: relative;
-    z-index: 5;
-  }
-  .stat-1 {
-    top: 160px;
-    right: 4px;
-  }
-  .stat-2 {
-    bottom: 35px;
-    right: 30px;
-  }
   .hero-actions {
     flex-wrap: wrap;
+  }
+  .stat-1, .stat-2 {
+    display: none;
   }
   .stat-float {
     padding: 6px 8px;
@@ -1063,6 +1055,7 @@ footer a {
     padding: 0 16px 20px 16px;
   }
 }
+
 
 /* ===== TABLET (640px en adelante) ===== */
 @media (min-width: 640px) {
