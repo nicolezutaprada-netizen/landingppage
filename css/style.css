@@ -353,7 +353,7 @@ footer a {
     border-radius: 10px;
     font: inherit;
     background-color: var(--blanco-06);
-    color: #f0f0f0;
+    color: #000000;
     outline: none;
     transition: border 0.2s;
     width: 100%;
