@@ -10,6 +10,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+
+
+
+
+
+     <div class="layout"> 
     <header>
         <nav>
             <ul>
@@ -20,54 +26,53 @@
             <a href="precios.html">Precios</a>
            <a href="faq.html" aria-label="Preguntas frecuentes">FAQ</a>
         </nav>
+        
     </header>
 
     <main>
 
-<section id="hero">
-    <div class="badge">● CURSO ONLINE · CUPOS LIMITADOS</div>
-    <h1>
-        LA IA NO TE VA A <br>
-        REEMPLAZAR. <br>
-        <span class="naranja">QUIEN LA SEPA <br> USAR ,SÍ.</span>
+
+
+        <section id="hero">
+  <div class="hero-left">
+    <div class="hero-badge">CURSO ONLINE · CUPOS LIMITADOS</div>
+    <h1 class="hero-h1">
+      La IA no te va a reemplazar.
+      <span class="nar">Quien la sepa usar, sí.</span>
     </h1>
-    <p>
-        <span class="plomo">Aprende a usar Chat gpt , Claude,
-        Midjornuy y muchas otras cosas para ahorrar +10 horas
-        semanales en tu trabajo. Sin tecnicismos. 100% práctico</span>
+    <p class="hero-desc">
+      Aprende a usar ChatGPT, Claude y Midjourney para ahorrar 10+ horas semanales en tu trabajo. Sin tecnicismos, 100% práctico.
     </p>
-
-    <div class="botones">
-    <button class="btn-principal">Empezar ahora →</button>
-    <button class="btn-secundario">Ver temario</button>
-</div>
-<div class="prueba-social">
-    <div class="avatares">
-        <div class="avatar" style="background:#ff6b2b;">JM</div>
-        <div class="avatar" style="background:#7c3aed;">AC</div>
-        <div class="avatar" style="background:#06b6d4;">LR</div>
-        <div class="avatar" style="background:#10b981;">+</div>
+    <div class="hero-actions">
+      <button class="hero-btn-main">Empezar ahora →</button>
+      <button class="hero-btn-ghost">Ver temario</button>
     </div>
-    <div class="prueba-texto">
+    <div class="hero-social">
+      <div class="hero-avatars">
+        <div class="hero-av" style="background:#ff6b2b">JM</div>
+        <div class="hero-av" style="background:#7c3aed">AC</div>
+        <div class="hero-av" style="background:#06b6d4">LR</div>
+        <div class="hero-av" style="background:#10b981">+</div>
+      </div>
+      <div class="hero-social-text">
         <p><b>+1,200 estudiantes</b> ya transformaron su trabajo</p>
-        <p class="estrellas">★★★★★ 4.9/5</p>
+        <p class="hero-stars">★★★★★ 4.9/5</p>
+      </div>
     </div>
-</div>
+  </div>
 
-<div class="tarjetas-stats">
-    <div class="stat-card">
-        <b>+87%</b>
-        <span>Productividad</span>
+  <div class="hero-right">
+    <canvas id="net"></canvas>
+    <div class="stat-float stat-1">
+      <b>+87%</b>
+      <span>Productividad</span>
     </div>
-    <div class="stat-card">
-        <b>10h</b>
-        <span>Ahorradas/sem</span>
+    <div class="stat-float stat-2">
+      <b>10h</b>
+      <span>Ahorradas/sem</span>
     </div>
-</div>
-</div>
+  </div>
 </section>
-
-
 
 
 
@@ -180,6 +185,83 @@
             </a>
         </div>
     </footer>
+  </div> 
+
+  
+<script>
+(function(){
+  const canvas = document.getElementById('net');
+  const ctx = canvas.getContext('2d');
+  let w, h, nodes;
+
+  function resize() {
+    const r = canvas.getBoundingClientRect();
+    w = canvas.width = r.width;
+    h = canvas.height = r.height;
+    init();
+  }
+
+  function init() {
+    nodes = [];
+    const count = Math.floor((w * h) / 5500);
+    for (let i = 0; i < count; i++) {
+      nodes.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        r: Math.random() * 2 + 1.5
+      });
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 130) {
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.strokeStyle = `rgba(255, 107, 43, ${0.4 * (1 - dist/130)})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+    }
+
+    nodes.forEach(n => {
+      n.x += n.vx;
+      n.y += n.vy;
+      if (n.x < 0 || n.x > w) n.vx *= -1;
+      if (n.y < 0 || n.y > h) n.vy *= -1;
+
+      const grad = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, n.r * 3);
+      grad.addColorStop(0, 'rgba(255,107,43,0.8)');
+      grad.addColorStop(1, 'rgba(255,107,43,0)');
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r * 3, 0, Math.PI * 2);
+      ctx.fillStyle = grad;
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fillStyle = '#ff6b2b';
+      ctx.fill();
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  draw();
+  window.addEventListener('resize', resize);
+})();
+</script>
 
 </body>
 </html>

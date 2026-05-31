@@ -10,14 +10,8 @@
     --textcolor: #f0f0f0;
 }
 
-.naranja {
-    color: #ff6b2b;
-}
 
-.plomo
-{
-  color:#524e4e
-}
+
 
 body{
     font-family: "Inter", sans-serif;
@@ -74,133 +68,160 @@ align-items → mover elementos arriba, centro o abajo*/
     margin-bottom: 1px; /*abajo */
     
 }
+
+
+
+/* */
+
 #hero {
   display: grid;
-  grid-template-colums:1fr auto;     /* base: apilado en móvil, decide hacia dónde van. El justify-content decide dónde dentro de esa dirección.  */
-
-  gap: 16px 40px;
-  padding: 32px;
-
+  grid-template-columns: 1fr 1fr;
+  min-height: 560px;
+  overflow: hidden;
+  position: relative;
 }
 
- 
-
-
-#hero p {
-  max-width: 480px;
+.hero-left {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 5;
 }
 
-.botones {
-    display: flex;
-    gap: 12px;
-    margin-top: 24px;
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,107,43,0.1);
+  border: 1px solid rgba(255,107,43,0.4);
+  color: #ff6b2b;
+  font-size: 11px;
+  letter-spacing: 2px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 600;
+  width: fit-content;
+  margin-bottom: 1.5rem;
+}
+.hero-badge::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #ff6b2b;
+  box-shadow: 0 0 8px #ff6b2b;
 }
 
-.btn-principal {
-    background: transparent;
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.3);;
-    padding: 14px 26px;
-    font-size: 13px;
-    font-weight: 700;
-    border-radius: 8px;
-    cursor: pointer;
+.hero-h1 {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  color: #fff;
+  margin: 0 0 1.5rem;
+}
+.hero-h1 .nar {
+  color: #ff6b2b;
+  display: block;
 }
 
-.btn-secundario {
-    background: transparent;
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 14px 26px;
-    font-size: 13px;
-    border-radius: 8px;
-    cursor: pointer;
+.hero-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 380px;
 }
 
-.prueba-social {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-top: 24px;
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+.hero-btn-main {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 14px 24px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.hero-btn-ghost {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 14px 24px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-.avatares {
-    display: flex;
+.hero-social {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.hero-avatars { display: flex; }
+.hero-av {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: 2px solid #0a0a0a;
+  margin-left: -8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+}
+.hero-av:first-child { margin-left: 0; }
+.hero-social-text p { font-size: 12px; color: rgba(255,255,255,0.6); margin: 0; }
+.hero-social-text b { color: #fff; }
+.hero-stars { color: #ffb800; font-size: 11px; }
+
+.hero-right {
+  position: relative;
+  overflow: hidden;
+}
+.hero-right canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.hero-right::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #0a0a0a 0%, transparent 30%);
+  z-index: 2;
+  pointer-events: none;
 }
 
-.avatar {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 2px solid #0a0a0f;
-    margin-left: -8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 11px;
-    font-weight: 700;
+.stat-float {
+  position: absolute;
+  z-index: 3;
+  background: rgba(20,20,20,0.85);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 12px 16px;
+  min-width: 120px;
 }
-
-.avatar:first-child {
-    margin-left: 0;
+.stat-float b {
+  color: #ff6b2b;
+  font-size: 20px;
+  font-weight: 800;
+  display: block;
 }
-
-.prueba-texto p {
-    font-size: 12px;
-    color: rgba(255,255,255,0.6);
-    margin: 0;
+.stat-float span {
+  color: rgba(255,255,255,0.6);
+  font-size: 11px;
 }
-
-.prueba-texto b {
-    color: #fff;
-    font-weight: 600;
-}
-
-.estrellas {
-    color: #ffb800 !important;
-    font-size: 11px;
-    margin-top: 3px !important;
-}
-
-
-.tarjetas-stats {
-    display: flex;        /* pone las 2 tarjetas lado a lado */
-    gap: 18px;            /* espacio entre las 2 tarjetas */
-    margin-top: 5px;     /* espacio arriba, separa de la prueba social */
-}
-
-.stat-card {
-    background: rgba(255, 255, 255, 0.05);  /* fondo oscuro translúcido */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* borde sutil */
-    border-radius: 10px;   /* esquinas redondeadas */
-    padding: 12px 16px;    /* espacio interno */
-    display: flex;         /* flex para apilar número y texto */
-    flex-direction: column; /* número arriba, texto abajo */
-    gap: 4px;              /* espacio entre número y texto */
-    animation: flotar 4s ease-in-out infinite; /* animación de subir/bajar */
-}
-
-.stat-card b {
-    font-size: 18px;       /* número grande */
-    font-weight: 700;      /* negrita */
-    color: #ff6b2b;        /* naranja */
-}
-
-.stat-card span {
-    font-size: 11px;       /* texto pequeño */
-    color: rgba(255,255,255,0.6); /* blanco semitransparente */
-}
-
-
-/*ESTa animacion  FLOTANTe FUE HECHOS CON IA*/
-
-/* animación de flotar */
-@keyframes flotar {
-    0%, 100% { transform: translateY(0); }     /* posición normal */
-    50%       { transform: translateY(-10px); } /* sube 10px */
-}
-
+.stat-1 { top: 8%; right: 6%; }
+.stat-2 { bottom: 12%; right: 22%; }
 
 
 
@@ -1031,25 +1052,51 @@ text-align: center;
 }
 
 /* === RESPONSIVE MÓVIL === aplica esto cuando la pantalla mida 768px o MENOS*/
-@media (max-width: 768px) {   
-    .temario {
-        padding: 48px 20px;
-    }
+@media (max-width: 768px) {
+  #hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
 
-    .tem-header h1 {
-        font-size: 28px;
-    }
+  .hero-left {
+    padding: 32px 24px;
+  }
 
-    .tem-stats {
-        gap: 24px;
-    }
+  .hero-h1 {
+    font-size: 42px;
+  }
 
-    .mod-lessons {
-        padding: 0 16px 20px 16px; /* menos padding en móvil */
-    }
+  .hero-desc {
+    max-width: 100%;
+  }
+
+  .hero-right {
+    height: 320px;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.75;
+  }
+
+  .hero-left {
+    position: relative;
+    z-index: 5;
+  }
+
+  .stat-1 {
+    top: 160px;
+    right: -20px;
+  }
+
+  .stat-2 {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+  }
 }
-
-
 
 
 
