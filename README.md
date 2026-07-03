@@ -99,3 +99,6 @@ landingppage/
 
 - `main` — rama principal, siempre estable
 - `feature/form-validado` — rama donde se desarrolló la validación del formulario, mergeada a main via Pull Request #1
+
+## Demo
+🔗 [Ver en GitHub Pages](https://nicolezutaprada-netizen.github.io/landingpage-minera/)
